@@ -2,7 +2,28 @@
 Clojure's library: Validate or update a hash map's values with the same structure hash.
 
 
-### Purpose I wrote
+
+# Usage
+In 'project.clj:
+
+```clj
+[lodge "0.1.1"]
+```
+
+In Clojure:
+```clj
+(use 'lodge.core)
+```
+
+In ClojureScript:
+```clj
+(:require [lodge.core :as lodge])
+(:require-macros [lodge.core :refer [update-with assoc-with]])
+```
+
+
+
+# Purpose I wrote
 See.
 
 ```clj
@@ -22,7 +43,8 @@ and
 The first arg of 'patrol takes a hash whose values are tester against each value of the second. It have to work as a validation for a hash. A hash whose elements are proper for it should have partol return true. Otherwise, return a list whose element can find all of false values in the hash through 'get-in. For example, (get-in somemap (first the-list-returned)) should returns the wrong value.
 
 
-### The structure of keys it needs
+
+# The structure of keys it needs
 This is the function, the base to define the all other functions here, which picks those keys out of a hash, named as 'roomlist.
 
 ```clj
@@ -51,7 +73,8 @@ This returns all reafs of a hash.
 (I've thought that those names may be not bad, at least rather than borrowing math terms.)
 
 
-### Built-in functions
+
+# Built-in functions
 Assume them.
 
 ```clj
@@ -77,9 +100,11 @@ I've already shown some functions: patrol, roomlist and lodgers. Almost other fu
   Replaces values of 'lodge with functions in 'dinners. Both always allow that 'dinners would be a sublodge of 'lodge, as the same as 'update or 'assoc.
 
 
-### License
+
+# License
 MIT
 
 
-### Author
+
+# Author
 Nelly N
